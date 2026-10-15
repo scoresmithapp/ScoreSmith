@@ -132,7 +132,7 @@
     <!-- ==================== DEUTSCH ==================== -->
     <section class="policy" id="de" lang="de">
       <h2>Datenschutzerklärung</h2>
-      <p class="stand">Stand: 18.&nbsp;Juli 2026</p>
+      <p class="stand">Stand: 15.&nbsp;Oktober 2026</p>
 
       <h3>Wer wir sind</h3>
       <p>ScoreSmith ist eine Android-App zum Zählen von Punkten bei Brett-, Karten- und Würfelspielen.</p>
@@ -142,10 +142,12 @@
       </p>
 
       <h3>Das Wichtigste in Kürze</h3>
-      <p>ScoreSmith erhebt, sammelt und überträgt <strong>keine personenbezogenen Daten</strong>.
-        Die App besitzt <strong>keine Internetberechtigung</strong> und kann daher technisch keine
-        Daten an uns oder Dritte senden. Es gibt keine Werbung, kein Tracking, keine
-        Analyse-Dienste und kein Nutzerkonto.</p>
+      <p>Die App selbst erhebt und überträgt <strong>keine personenbezogenen Daten</strong>. Sie
+        hat <strong>keine Internetberechtigung</strong> und sendet nichts an uns oder an Dritte. Es
+        gibt keine Werbung, kein Tracking, keine Analyse-Dienste und kein Nutzerkonto.</p>
+      <p>Daten von dir erhalten wir nur, wenn du uns selbst eine E-Mail schreibst (siehe
+        „Kontakt per E-Mail und Feedback“). Außerdem stellt uns Google über Google Play
+        Statistiken und Absturzberichte bereit (siehe „Google Play und Google-Dienste“).</p>
 
       <h3>Welche Daten die App speichert — und wo</h3>
       <p>Alle Inhalte, die du in der App anlegst, werden <strong>ausschließlich lokal auf deinem
@@ -163,8 +165,9 @@
       <p>Du kannst Spiele, Partien oder ein komplettes Backup als Datei (Endung
         <code>.scoresmith</code>) exportieren und über Apps deiner Wahl (z.&nbsp;B. Messenger oder
         E-Mail) teilen. Das geschieht <strong>nur auf deine ausdrückliche Aktion hin</strong>.
-        Für den Umgang mit der Datei nach dem Teilen gilt die Datenschutzerklärung der jeweils
-        verwendeten App.</p>
+        Die Datei enthält auch die Namen, die du für Spielerinnen, Spieler und Teams eingetragen
+        hast. Für den Umgang mit der Datei nach dem Teilen gilt die Datenschutzerklärung der
+        jeweils verwendeten App.</p>
 
       <h3>Automatische Backups</h3>
       <p>Wenn du die Auto-Backup-Funktion aktivierst, schreibt die App regelmäßig eine
@@ -176,31 +179,83 @@
         Datenschutzerklärung von Google.</p>
 
       <h3>Berechtigungen</h3>
-      <p>Die App verwendet eine einzige Berechtigung:</p>
+      <p>Die App fragt während der Nutzung keine Berechtigung ab. Sie enthält nur
+        Berechtigungen, die Android bei der Installation ohne Rückfrage erteilt:</p>
       <ul>
-        <li><strong>Vibration (VIBRATE):</strong> für haptisches Feedback, z.&nbsp;B. beim Ablauf
-          des Spieltimers. Es werden dabei keine Daten verarbeitet.</li>
+        <li><strong>Vibration (VIBRATE):</strong> für haptisches Feedback, z.&nbsp;B. wenn der
+          Spieltimer abläuft.</li>
+        <li><strong>Hintergrundaufgaben (WAKE_LOCK, FOREGROUND_SERVICE, RECEIVE_BOOT_COMPLETED,
+          ACCESS_NETWORK_STATE):</strong> Diese bringt die Android-Bibliothek WorkManager mit,
+          über die das automatische Backup läuft. Sie hält das Gerät während eines Backups kurz
+          wach und plant Backups nach einem Neustart wieder ein. Den Netzwerkstatus fragt
+          WorkManager nur für seine Planung ab; ins Internet kann die App ohne
+          Internetberechtigung nicht.</li>
+        <li><strong>DYNAMIC_RECEIVER_NOT_EXPORTED_PERMISSION:</strong> eine interne
+          Schutzberechtigung der Android-Bibliothek AndroidX. Sie verhindert, dass andere Apps
+          interne Nachrichten an ScoreSmith senden.</li>
       </ul>
-      <p>Die App fordert <strong>keine</strong> Internet-, Standort-, Kamera-, Mikrofon- oder
-        Kontaktberechtigungen an.</p>
+      <p>Die App hat <strong>keine</strong> Internet-, Standort-, Kamera-, Mikrofon- oder
+        Kontaktberechtigung.</p>
 
       <h3>KI-Hilfe</h3>
-      <p>Die App erstellt auf Wunsch einen Text-Prompt (für Formeln oder ein ganzes Spiel), den
-        du selbst kopierst und in einen KI-Dienst deiner Wahl einfügst. Die App selbst ruft
-        <strong>keinen KI-Dienst auf und überträgt nichts</strong>. Fügst du eine KI-Antwort
-        wieder ein, wird die Zwischenablage nur lokal und nur auf deinen ausdrücklichen
-        Knopfdruck gelesen – ihr Inhalt verlässt dein Gerät nicht. Was du in fremde Dienste
-        einfügst, unterliegt deren Datenschutzbestimmungen.</p>
+      <p>Die App erstellt auf Wunsch einen Text-Prompt (für Formeln, ein ganzes Spiel oder
+        Kategorie-Vorschläge), den du selbst kopierst und in einen KI-Dienst deiner Wahl
+        einfügst. Die App selbst ruft <strong>keinen KI-Dienst auf und überträgt
+        nichts</strong>. Fügst du eine KI-Antwort wieder ein, wird die Zwischenablage nur lokal
+        und nur auf deinen ausdrücklichen Knopfdruck gelesen – ihr Inhalt verlässt dein Gerät
+        nicht. Was du in fremde Dienste einfügst, unterliegt deren Datenschutzbestimmungen.</p>
+
+      <h3>Kontakt per E-Mail und Feedback</h3>
+      <p>Wenn du uns eine E-Mail schreibst, verarbeiten wir deine E-Mail-Adresse, deinen Namen
+        (falls du ihn angibst) und den Inhalt deiner Nachricht, um dir zu antworten.</p>
+      <p>„Feedback senden“ in den Einstellungen öffnet einen Entwurf in deiner E-Mail-App. Darin
+        sind App-Version, Gerätehersteller und -modell sowie die Android-Version schon
+        eingetragen, damit wir Fehler nachvollziehen können. Du siehst den ganzen Entwurf und
+        kannst ihn ändern oder verwerfen. Gesendet wird erst, wenn du in deiner E-Mail-App auf
+        Senden tippst.</p>
+      <p>Rechtsgrundlage ist unser berechtigtes Interesse, Anfragen zu beantworten und die App zu
+        verbessern (Art.&nbsp;6 Abs.&nbsp;1 lit.&nbsp;f DSGVO). Wir löschen deine Nachricht,
+        sobald die Anfrage erledigt ist, außer gesetzliche Aufbewahrungspflichten verlangen
+        etwas anderes. Unser Postfach liegt bei Google (Gmail). Google kann E-Mails dabei auch in
+        den USA verarbeiten; Google LLC ist nach dem EU-US Data Privacy Framework
+        zertifiziert.</p>
+
+      <h3>Google Play und Google-Dienste</h3>
+      <p>ScoreSmith wird über Google Play verteilt. Beim Herunterladen und Aktualisieren
+        verarbeitet Google Daten wie dein Google-Konto und Angaben zu deinem Gerät in eigener
+        Verantwortung. Dafür gilt die Datenschutzerklärung von Google; darauf haben wir keinen
+        Einfluss.</p>
+      <p>In der Play Console zeigt Google uns zusammengefasste Statistiken, etwa
+        Installationszahlen nach Land oder Gerätetyp. Wenn du in Android erlaubt hast, Nutzungs-
+        und Diagnosedaten mit Google zu teilen, sehen wir dort außerdem Absturzberichte mit
+        Gerätemodell, Android-Version, App-Version und dem technischen Fehlerverlauf. Wer du bist,
+        können wir daraus nicht erkennen. Wir nutzen diese Angaben, um Fehler zu finden und zu
+        beheben (Art.&nbsp;6 Abs.&nbsp;1 lit.&nbsp;f DSGVO).</p>
+      <p>Die Schrift der App ist in der App enthalten und wird nicht nachgeladen. Damit auch neue
+        Emojis richtig erscheinen, fragt ScoreSmith wie die meisten Android-Apps die
+        Emoji-Schrift über die Schriftarten-Schnittstelle von Android ab. Auf Geräten mit
+        Google-Play-Diensten stellt Google diese Schrift bereit und lädt sie bei Bedarf selbst
+        herunter. Inhalte aus ScoreSmith werden dabei nicht übertragen.</p>
 
       <h3>Löschen deiner Daten</h3>
-      <p>Alle Daten kannst du jederzeit selbst löschen: einzelne Spiele und Partien in der App,
-        sämtliche Daten durch Deinstallieren der App bzw. „Daten löschen“ in den
-        Android-App-Einstellungen. Da wir keine Daten erhalten, gibt es bei uns nichts zu
-        löschen.</p>
+      <p>Alle Daten in der App kannst du jederzeit selbst löschen: einzelne Spiele und Partien in
+        der App, sämtliche Daten durch Deinstallieren der App bzw. „Daten löschen“ in den
+        Android-App-Einstellungen. Von der App selbst erhalten wir keine Daten. Bei uns liegen
+        höchstens E-Mails, die du uns geschrieben hast; ihre Löschung kannst du jederzeit
+        verlangen.</p>
+
+      <h3>Deine Rechte</h3>
+      <p>Soweit wir personenbezogene Daten von dir verarbeiten, in der Praxis also deine E-Mails
+        an uns, hast du das Recht auf Auskunft (Art.&nbsp;15 DSGVO), Berichtigung
+        (Art.&nbsp;16), Löschung (Art.&nbsp;17), Einschränkung der Verarbeitung (Art.&nbsp;18),
+        Datenübertragbarkeit (Art.&nbsp;20) und Widerspruch (Art.&nbsp;21). Eine kurze E-Mail an
+        scoresmith.app@gmail.com genügt.</p>
+      <p>Außerdem kannst du dich bei einer Datenschutz-Aufsichtsbehörde beschweren
+        (Art.&nbsp;77 DSGVO), zum Beispiel bei der Behörde an deinem Wohnort.</p>
 
       <h3>Kinder</h3>
-      <p>Die App richtet sich an eine allgemeine Zielgruppe und erhebt — wie beschrieben —
-        keinerlei Daten, auch nicht von Kindern.</p>
+      <p>Die App richtet sich an eine allgemeine Zielgruppe und erhebt keine Daten, auch nicht
+        von Kindern.</p>
 
       <h3>Änderungen dieser Erklärung</h3>
       <p>Bei Änderungen an der App, die den Umgang mit Daten betreffen, wird diese Erklärung
@@ -213,7 +268,7 @@
     <!-- ==================== ENGLISH ==================== -->
     <section class="policy" id="en" lang="en">
       <h2>Privacy Policy</h2>
-      <p class="stand">Effective date: July&nbsp;18, 2026</p>
+      <p class="stand">Effective date: October&nbsp;15, 2026</p>
 
       <h3>Who we are</h3>
       <p>ScoreSmith is an Android app for keeping score in board, card, and dice games.</p>
@@ -223,10 +278,12 @@
       </p>
 
       <h3>Summary</h3>
-      <p>ScoreSmith does <strong>not collect, store remotely, or transmit any personal
-        data</strong>. The app has <strong>no internet permission</strong> and is therefore
-        technically unable to send data to us or to third parties. There are no ads, no
-        tracking, no analytics, and no user accounts.</p>
+      <p>The app itself does <strong>not collect or transmit any personal data</strong>. It has
+        <strong>no internet permission</strong> and sends nothing to us or to third parties.
+        There are no ads, no tracking, no analytics, and no user accounts.</p>
+      <p>We only receive data from you if you write to us by e-mail yourself (see “Contact by
+        e-mail and feedback”). In addition, Google provides us with statistics and crash reports
+        through Google Play (see “Google Play and Google services”).</p>
 
       <h3>What the app stores — and where</h3>
       <p>Everything you create in the app is stored <strong>locally on your device
@@ -243,8 +300,9 @@
       <h3>Sharing and exporting</h3>
       <p>You can export games, matches, or a full backup as a file (<code>.scoresmith</code>
         extension) and share it through apps of your choice (e.g. messengers or e-mail). This
-        happens <strong>only upon your explicit action</strong>. Once shared, the file is
-        subject to the privacy policy of the app you shared it with.</p>
+        happens <strong>only upon your explicit action</strong>. The file also contains the
+        player and team names you entered. Once shared, the file is subject to the privacy
+        policy of the app you shared it with.</p>
 
       <h3>Automatic backups</h3>
       <p>If you enable the auto-backup feature, the app periodically writes a backup file to a
@@ -256,30 +314,78 @@
         policy.</p>
 
       <h3>Permissions</h3>
-      <p>The app uses a single permission:</p>
+      <p>The app never asks for a permission while you use it. It only contains permissions that
+        Android grants at install time without asking:</p>
       <ul>
         <li><strong>Vibration (VIBRATE):</strong> for haptic feedback, e.g. when the game timer
-          expires. No data is processed.</li>
+          expires.</li>
+        <li><strong>Background work (WAKE_LOCK, FOREGROUND_SERVICE, RECEIVE_BOOT_COMPLETED,
+          ACCESS_NETWORK_STATE):</strong> these come with Android’s WorkManager library, which
+          runs the automatic backup. It keeps the device awake briefly during a backup and
+          reschedules backups after a restart. WorkManager reads the network state only for its
+          scheduling; without the internet permission the app cannot go online.</li>
+        <li><strong>DYNAMIC_RECEIVER_NOT_EXPORTED_PERMISSION:</strong> an internal protection
+          permission of the AndroidX library. It prevents other apps from sending internal
+          messages to ScoreSmith.</li>
       </ul>
-      <p>The app requests <strong>no</strong> internet, location, camera, microphone, or
-        contacts permissions.</p>
+      <p>The app has <strong>no</strong> internet, location, camera, microphone, or contacts
+        permission.</p>
 
       <h3>AI assistance</h3>
-      <p>On request the app builds a text prompt (for formulas or a whole game) that you copy
-        yourself and paste into an AI service of your choice. The app itself <strong>never
-        calls an AI service and transmits nothing</strong>. When you paste an AI answer back,
-        the clipboard is read locally and only on your explicit tap – its content never leaves
-        your device. Anything you paste into third-party services is subject to their privacy
-        policies.</p>
+      <p>On request the app builds a text prompt (for formulas, a whole game, or category
+        suggestions) that you copy yourself and paste into an AI service of your choice. The app
+        itself <strong>never calls an AI service and transmits nothing</strong>. When you paste
+        an AI answer back, the clipboard is read locally and only on your explicit tap – its
+        content never leaves your device. Anything you paste into third-party services is
+        subject to their privacy policies.</p>
+
+      <h3>Contact by e-mail and feedback</h3>
+      <p>If you send us an e-mail, we process your e-mail address, your name (if you include
+        it), and the content of your message in order to reply.</p>
+      <p>“Send feedback” in the settings opens a draft in your e-mail app. It already contains
+        the app version, device manufacturer and model, and the Android version so we can
+        reproduce bugs. You see the whole draft and can edit or discard it. Nothing is sent until
+        you tap Send in your e-mail app.</p>
+      <p>The legal basis is our legitimate interest in answering requests and improving the app
+        (Art.&nbsp;6(1)(f) GDPR). We delete your message once your request is settled, unless
+        statutory retention obligations require otherwise. Our mailbox is hosted by Google
+        (Gmail). Google may also process e-mails in the USA; Google LLC is certified under the
+        EU-U.S. Data Privacy Framework.</p>
+
+      <h3>Google Play and Google services</h3>
+      <p>ScoreSmith is distributed through Google Play. When you download or update the app,
+        Google processes data such as your Google account and information about your device
+        under its own responsibility. Google’s privacy policy applies to that; we have no
+        influence on it.</p>
+      <p>In the Play Console, Google shows us aggregated statistics, such as install numbers by
+        country or device type. If you allowed Android to share usage and diagnostics data with
+        Google, we also see crash reports there with the device model, Android version, app
+        version, and the technical error trace. We cannot tell who you are from them. We use
+        this information to find and fix bugs (Art.&nbsp;6(1)(f) GDPR).</p>
+      <p>The app’s font ships inside the app and is never downloaded. To display newer emojis
+        correctly, ScoreSmith, like most Android apps, requests the emoji font through Android’s
+        font interface. On devices with Google Play services, Google provides that font and
+        downloads it itself when needed. No content from ScoreSmith is transmitted in the
+        process.</p>
 
       <h3>Deleting your data</h3>
-      <p>You can delete all data yourself at any time: individual games and matches inside the
-        app, or everything by uninstalling the app or using “Clear data” in Android’s app
-        settings. Since we receive no data, there is nothing for us to delete on our side.</p>
+      <p>You can delete all data in the app yourself at any time: individual games and matches
+        inside the app, or everything by uninstalling the app or using “Clear data” in Android’s
+        app settings. We receive no data from the app itself. All we may hold are e-mails you
+        sent us, and you can ask us to delete them at any time.</p>
+
+      <h3>Your rights</h3>
+      <p>Where we process personal data about you, which in practice means your e-mails to us,
+        you have the right of access (Art.&nbsp;15 GDPR), rectification (Art.&nbsp;16), erasure
+        (Art.&nbsp;17), restriction of processing (Art.&nbsp;18), data portability
+        (Art.&nbsp;20), and objection (Art.&nbsp;21). A short e-mail to
+        scoresmith.app@gmail.com is enough.</p>
+      <p>You also have the right to lodge a complaint with a data protection supervisory
+        authority (Art.&nbsp;77 GDPR), for example the one where you live.</p>
 
       <h3>Children</h3>
-      <p>The app is intended for a general audience and — as described — collects no data from
-        anyone, including children.</p>
+      <p>The app is intended for a general audience and collects no data from anyone, including
+        children.</p>
 
       <h3>Changes to this policy</h3>
       <p>If future changes to the app affect how data is handled, this policy will be updated
